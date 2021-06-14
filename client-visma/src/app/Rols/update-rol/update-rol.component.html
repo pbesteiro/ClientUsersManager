@@ -1,0 +1,48 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="my-0 fw-normal">Modificar Rol</h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <input type="text" class="form-control" [(ngModel)]="rolDescription" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <p>A continuación se listan los Permisos Asignados a este rol:</p>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let permission of permissions">
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            (change)="updateRolPermissions($event, permission)"
+            [checked]="hasPermissionAssigned(permission)"
+          />&nbsp;&nbsp; <b>{{ permission.description }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-5">
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-success" (click)="save()">
+        Modificar
+      </button>
+    </div>
+  </div>
+</div>

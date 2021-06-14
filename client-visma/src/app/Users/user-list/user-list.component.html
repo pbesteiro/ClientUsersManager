@@ -1,0 +1,59 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <h1>Usuario Del Sistema</h1>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-primary" (click)="goToCreate()">
+        Crear Nuevo Usuario
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-12">
+      <h4>A continuación se listan los usuarios ingresados al sistema</h4>
+    </div>
+  </div>
+  <br />
+  <hr />
+  <div class="row">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Nombre</th>
+            <th>Email</th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <a routerLink="/User/{{ user.id }}/details" *ngIf="user.id != 1"
+                ><span>Detalles</span></a
+              >
+            </td>
+            <td>
+              <a routerLink="/User/{{ user.id }}/edit" *ngIf="user.id != 1"
+                ><span>Editar</span></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <br />
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>

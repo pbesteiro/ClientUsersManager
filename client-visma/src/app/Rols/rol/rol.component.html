@@ -1,0 +1,36 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="my-0 fw-normal">
+        Consultar Rol <b>{{ rol.description }}</b>
+      </h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <p>A continuación se listan los Permisos Asignados a este rol:</p>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let permison of rol.permissions">
+        <li class="list-group-item">
+          <b>{{ permison.description }}</b>
+        </li>
+      </ul>
+    </div>
+</div>
+    <br />
+    <br />
+    <div class="row">
+      <div class="col-3">        
+        <button type="button" class="btn btn-primary" (click)="back()">
+          Volver
+        </button>
+      </div>
+    </div>
+  </div>
+

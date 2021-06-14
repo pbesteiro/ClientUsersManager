@@ -1,0 +1,91 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="my-0 fw-normal">Agregar Nuevo Usuario</h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Nombre</b></label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="name"
+        placeholder="Ingresa el nombre"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Email</b></label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="email"
+        placeholder="Ingresa el email"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="password"><b>Password</b></label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="password"
+        placeholder="Ingresa el password"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="passwordRepeat"><b>Repita elPassword</b></label>
+      <input
+        type="password"
+        class="form-control"
+        [(ngModel)]="passwordRepeat"
+        placeholder="Ingresa el password"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <p>
+        Por favor seleccione los roles que le va a asignar a este nuevo usuario:
+      </p>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let rol of rols">
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            (change)="updateUserRols($event, rol)"
+          />&nbsp;&nbsp; <b>{{ rol.description }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" (click)="save()">
+        Crear
+      </button>
+    </div>
+  </div>
+</div>

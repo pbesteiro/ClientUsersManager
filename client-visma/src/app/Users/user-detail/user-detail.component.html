@@ -1,0 +1,60 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1 class="my-0 fw-normal">
+        Consultar Usuario <b>{{ user.name }}</b>
+      </h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Nombre</b></label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="user.name"
+        disabled
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Email</b></label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="user.email"
+        disabled
+      />
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <h3>Roles asignados a este usuario</h3>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let rol of user.rols">
+        <li class="list-group-item">
+          <b>{{ rol.description }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>

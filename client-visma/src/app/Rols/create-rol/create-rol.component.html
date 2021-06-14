@@ -1,0 +1,53 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Agregar Nuevo Rol</h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="description"><b>Nombre</b></label>
+      <input
+        type="text"
+        class="form-control"
+        [(ngModel)]="rolDescription"
+        placeholder="Nombre del rol"
+      />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <h4>Permisos a asignar a este nuevo rol</h4>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let permission of permissions">
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            (change)="updateRolPermissions($event, permission)"
+          />&nbsp;&nbsp; <b>{{ permission.description }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+    <div class="col-3">
+      <button type="button" class="btn btn-primary" (click)="save()">
+        Crear
+      </button>
+    </div>
+  </div>
+</div>

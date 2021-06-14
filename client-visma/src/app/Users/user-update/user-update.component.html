@@ -1,0 +1,57 @@
+<app-nav></app-nav>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <h1>Modificar Usuario</h1>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Nombre</b></label>
+      <input type="text" class="form-control" [(ngModel)]="name" />
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <label for="email"><b>Email</b></label>
+      <input type="text" class="form-control" [(ngModel)]="email" />
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <h3>Roles asignados a este usuario</h3>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <ul class="list-group" *ngFor="let rol of rols">
+        <li class="list-group-item">
+          <input
+            type="checkbox"
+            (change)="updateUserRols($event, rol)"
+            [checked]="hasRolAssigned(rol)"
+          />&nbsp;&nbsp; <b>{{ rol.description }}</b>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <br />
+  <br />
+  <div class="row">
+    <div class="col-5">
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+    <div class="col-1">
+      <button type="button" class="btn btn-success" (click)="save()">
+        Modificar
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+{
+    "/api":{
+        "target":"https://vismachallenge.azurewebsites.net",
+        "secure":false,
+        "logLevel":"debug"
+    }
+}

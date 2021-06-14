@@ -1,0 +1,64 @@
+<app-nav></app-nav>
+
+<div class="container">
+  <h1>Roles de Usuario</h1>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <button class="btn btn-primary btn-xs"  style="float: left" (click)="goToCreate()">
+        Crear Nuevo Rol
+      </button>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-12">
+      <h4>
+        A continuación se listan los roles de usuario ingresados al sistema
+      </h4>
+    </div>
+  </div>
+  <br />
+  <div class="row">
+    <div class="col-6">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Rol</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let rol of rols; let i = index">
+            <td>{{ rol.description }}</td>
+            <td>
+              <a routerLink="/Rol/{{ rol.id }}/details"
+                ><span>Detalles</span><i class="glyphicon glyphicon-heart"></i></a
+              >
+            </td>
+            <td>
+              <a routerLink="/Rol/{{ rol.id }}/edit" *ngIf="rol.id != 1"
+                ><span>Editar</span></a
+              >
+            </td>
+            <td>
+              <a href="#" (click)="deleteRol(rol.id, i)" *ngIf="rol.id != 1"
+                ><span>Eliminar</span></a
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <br />
+      <button type="button" class="btn btn-primary" (click)="back()">
+        Volver
+      </button>
+    </div>
+  </div>
+</div>

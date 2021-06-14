@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+      
+        <h1 class="h3 mb-3 fw-normal">Please ingresa tus credenciales</h1>
+
+        <input
+          type="email"
+          class="form-control"
+          placeholder="name@example.com"
+          [(ngModel)]="email"
+        />
+
+        <input
+          type="password"
+          class="form-control"
+          placeholder="Password"  
+          [(ngModel)]="password"   
+        />
+        <br />
+        <button class="w-100 btn btn-lg btn-primary" type="button" (click)="login()">
+          Ingresar
+        </button>
+    
+    </div>
+  </div>
+</div>
